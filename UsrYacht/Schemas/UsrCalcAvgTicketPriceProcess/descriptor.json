@@ -4,6 +4,7 @@
     "Name": "UsrCalcAvgTicketPriceProcess",
     "ModifiedOnUtc": "\/Date(1775579685000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "Calculate average ticket price process"
+    "Caption": "Calculate average ticket price process",
+    "DependsOn": []
   }
 }

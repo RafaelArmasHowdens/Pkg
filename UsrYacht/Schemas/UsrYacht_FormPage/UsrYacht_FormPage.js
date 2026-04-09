@@ -68,6 +68,27 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			},
 			{
 				"operation": "insert",
+				"name": "RunWebService",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(RunWebService_caption)#",
+					"color": "outline",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"clicked": {
+						"request": "usr.RunMaxPriceWebServiceRequest"
+					},
+					"clickMode": "default",
+					"icon": "rocket-icon"
+				},
+				"parentName": "MainHeaderBottom",
+				"propertyName": "items",
+				"index": 2
+			},
+			{
+				"operation": "insert",
 				"name": "PushMeButton",
 				"values": {
 					"type": "crt.Button",
@@ -85,7 +106,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				},
 				"parentName": "MainHeaderBottom",
 				"propertyName": "items",
-				"index": 2
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -390,6 +411,26 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			},
 			{
 				"operation": "insert",
+				"name": "CategoriesMultiSelect",
+				"values": {
+					"type": "crt.MultiSelect",
+					"label": "#ResourceString(CategoriesMultiSelect_label)#",
+					"recordId": "$Id",
+					"recordRelationColumnName": "UsrParentYacht",
+					"selectSchemaName": "UsrYachtCategoryStorage",
+					"selectColumnName": "UsrCategory",
+					"visible": true,
+					"labelPosition": "auto",
+					"placeholder": "",
+					"tooltip": "",
+					"required": false
+				},
+				"parentName": "GeneralInfoTab",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
 				"name": "ExpansionPanel_hketk3p",
 				"values": {
 					"type": "crt.ExpansionPanel",
@@ -412,7 +453,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				},
 				"parentName": "GeneralInfoTab",
 				"propertyName": "items",
-				"index": 1
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -986,6 +1027,9 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 								}
 							}
 						}
+					},
+					"CategoriesMultiSelect_List_Items_Predefined_Filter": {
+						"value": null
 					}
 				}
 			},
@@ -1090,6 +1134,49 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					}
 					return next?.handle(request);
 				}				
+			},
+			{
+
+				request: "usr.RunMaxPriceWebServiceRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Run web service button works...");
+					/* get id from drive type lookup type object
+					var typeObject = await request.$context.PDS_UsrDriveType_87u9x8r;
+					var selectedDriveTypeId = "";
+					if (typeObject) {
+						selectedDriveTypeId = typeObject.value;
+					}
+
+					// Create an instance of the HTTP client from @creatio-devkit/common. 
+					const httpClientService = new sdk.HttpClientService();
+					// Specify the URL to run web service method.
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "YachtService";
+					const methodName = "GetMaxPriceByDriveTypeId";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+					
+					//const endpoint = "http://localhost/D1_Studio/0/rest/YachtService/GetMaxPriceByDriveTypeId";
+					// Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically.
+					var params = {
+						driveTypeId: selectedDriveTypeId
+					};
+					const response = await httpClientService.post(endpoint, params);
+					
+					console.log("response max price = " + response.body.GetMaxPriceByDriveTypeIdResult);
+					
+					/* Call the next handler if it exists and return its result. */
+					const httpClientService = new sdk.HttpClientService();
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "YachtService";
+					const methodName = "GetExample";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+					const response = await httpClientService.get(endpoint);
+					console.log(response);
+					return next?.handle(request);
+				}
 			}
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,

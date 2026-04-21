@@ -91,12 +91,57 @@ define("UsrYachtRentalPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "Input_ppy69z4",
+				"name": "Input_xht24tg",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
 						"row": 4,
+						"rowSpan": 1
+					},
+					"type": "crt.Input",
+					"label": "$Resources.Strings.UsrYachtRentalDS_UsrManager_u2cymtz",
+					"control": "$UsrYachtRentalDS_UsrManager_u2cymtz",
+					"placeholder": "",
+					"tooltip": "",
+					"readonly": false,
+					"multiline": false,
+					"labelPosition": "above"
+				},
+				"parentName": "MainContainer",
+				"propertyName": "items",
+				"index": 3
+			},
+			{
+				"operation": "insert",
+				"name": "NumberInput_zpiz0ff",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 5,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.UsrYachtRentalDS_UsrPrice_g2scnp9",
+					"control": "$UsrYachtRentalDS_UsrPrice_g2scnp9",
+					"readonly": false,
+					"placeholder": "",
+					"labelPosition": "above",
+					"tooltip": ""
+				},
+				"parentName": "MainContainer",
+				"propertyName": "items",
+				"index": 4
+			},
+			{
+				"operation": "insert",
+				"name": "Input_ppy69z4",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 6,
 						"rowSpan": 1
 					},
 					"type": "crt.Input",
@@ -110,7 +155,7 @@ define("UsrYachtRentalPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "MainContainer",
 				"propertyName": "items",
-				"index": 3
+				"index": 5
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -151,6 +196,16 @@ define("UsrYachtRentalPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"UsrYachtRentalDS_UsrComment_ohdik6q": {
 						"modelConfig": {
 							"path": "UsrYachtRentalDS.UsrComment"
+						}
+					},
+					"UsrYachtRentalDS_UsrManager_u2cymtz": {
+						"modelConfig": {
+							"path": "UsrYachtRentalDS.UsrManager"
+						}
+					},
+					"UsrYachtRentalDS_UsrPrice_g2scnp9": {
+						"modelConfig": {
+							"path": "UsrYachtRentalDS.UsrPrice"
 						}
 					}
 				}

@@ -18,6 +18,10 @@
 = MetaData.Schema.EG1.BK4.["8140d7e7-fb91-4999-8347-543345440efb"].CK2.["c803a450-c8dc-47a4-b704-7125c23db317"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
 = MetaData.Schema.EG1.JC1 []
 = MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D29 "null"
++ MetaData.Schema.D30 "null"
++ MetaData.Schema.D31 "null"
++ MetaData.Schema.D38 true
 + MetaData.Schema.D2 {
   "UId": "c80e6577-4823-acf4-7304-e45637995bb8",
   "A2": "UsrComment",
@@ -79,6 +83,22 @@
   "E17": "UsrParentYachtId",
   "E18": "UsrParentYachtUsrName"
 }
++ MetaData.Schema.D2 {
+  "UId": "4b02885e-7ca8-a1f0-832e-5e57c3e7c9cb",
+  "A2": "UsrPrice",
+  "A3": "10914f0b-0ef8-4652-963f-ddd45a687d33",
+  "A4": "10914f0b-0ef8-4652-963f-ddd45a687d33",
+  "A5": "5e8cc8f7-fb39-4b6e-ba7f-1487c36616fd",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
+}
++ MetaData.Schema.D2 {
+  "UId": "a990a00b-cc10-f44f-a425-215cc4ef3595",
+  "A2": "UsrManager",
+  "A3": "10914f0b-0ef8-4652-963f-ddd45a687d33",
+  "A4": "10914f0b-0ef8-4652-963f-ddd45a687d33",
+  "A5": "5e8cc8f7-fb39-4b6e-ba7f-1487c36616fd",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -90,7 +110,9 @@
   "dbf92bb0-6ccb-89d0-7416-6b74d6c5a40f",
   "322b3502-7e55-c274-5ad1-4fc3cdd5b80a",
   "6fc3748c-f261-e26c-d6ad-2820d421e795",
-  "9c952c9d-908b-b37d-3642-e26a9d031c12"
+  "9c952c9d-908b-b37d-3642-e26a9d031c12",
+  "4b02885e-7ca8-a1f0-832e-5e57c3e7c9cb",
+  "a990a00b-cc10-f44f-a425-215cc4ef3595"
 ]
 = MetaData.Schema.D20.A2 "UsrYachtRentalEvents"
 + MetaData.Schema.D20.FA1 false

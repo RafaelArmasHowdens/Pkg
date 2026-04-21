@@ -1,4 +1,4 @@
-define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/()/**SCHEMA_ARGS*/ {
+define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
@@ -49,7 +49,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"size": "medium",
 					"iconPosition": "left-icon",
 					"visible": true,
-					"icon": "actions-button-icon",
+					"icon": "image-update",
 					"clicked": {
 						"request": "crt.RunBusinessProcessRequest",
 						"params": {
@@ -78,7 +78,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"iconPosition": "left-icon",
 					"visible": true,
 					"clicked": {
-						"request": "usr.RunMaxPriceWebServiceRequest"
+						"request": "usr.RunAvgPriceWebServiceRequest"
 					},
 					"clickMode": "default",
 					"icon": "rocket-icon"
@@ -330,7 +330,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			},
 			{
 				"operation": "insert",
-				"name": "Country",
+				"name": "City",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
@@ -339,7 +339,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 						"rowSpan": 1
 					},
 					"type": "crt.ComboBox",
-					"label": "$Resources.Strings.PDS_UsrCountry_ckc00z5",
+					"label": "$Resources.Strings.PDS_UsrCity_thxb92r",
 					"ariaLabel": "",
 					"isAddAllowed": true,
 					"showValueAsLink": false,
@@ -347,7 +347,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"controlActions": [],
 					"listActions": [],
 					"tooltip": "",
-					"control": "$PDS_UsrCountry_ckc00z5",
+					"control": "$PDS_UsrCity_thxb92r",
 					"visible": true,
 					"readonly": false,
 					"placeholder": "",
@@ -382,16 +382,16 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			},
 			{
 				"operation": "insert",
-				"name": "City",
+				"name": "Country",
 				"values": {
 					"layoutConfig": {
-						"column": 2,
+						"column": 1,
 						"colSpan": 1,
 						"row": 5,
 						"rowSpan": 1
 					},
 					"type": "crt.ComboBox",
-					"label": "$Resources.Strings.PDS_UsrCity_thxb92r",
+					"label": "$Resources.Strings.PDS_UsrCountry_ckc00z5",
 					"ariaLabel": "",
 					"isAddAllowed": true,
 					"showValueAsLink": false,
@@ -399,7 +399,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"controlActions": [],
 					"listActions": [],
 					"tooltip": "",
-					"control": "$PDS_UsrCity_thxb92r",
+					"control": "$PDS_UsrCountry_ckc00z5",
 					"visible": true,
 					"readonly": false,
 					"placeholder": "",
@@ -408,6 +408,73 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
 				"index": 8
+			},
+			{
+				"operation": "insert",
+				"name": "Length",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 5,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrLength_ich4qz9",
+					"control": "$PDS_UsrLength_ich4qz9",
+					"readonly": false,
+					"placeholder": "",
+					"labelPosition": "auto",
+					"tooltip": ""
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 9
+			},
+			{
+				"operation": "insert",
+				"name": "Captain",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 6,
+						"rowSpan": 1
+					},
+					"type": "crt.Input",
+					"label": "$Resources.Strings.PDS_UsrCaptain_ctyuu53",
+					"control": "$PDS_UsrCaptain_ctyuu53",
+					"placeholder": "",
+					"tooltip": "",
+					"readonly": false,
+					"multiline": false,
+					"labelPosition": "auto"
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 10
+			},
+			{
+				"operation": "insert",
+				"name": "CrewCount",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 6,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrCrewCount_eenskb9",
+					"control": "$PDS_UsrCrewCount_eenskb9",
+					"readonly": false,
+					"placeholder": "",
+					"labelPosition": "auto",
+					"tooltip": ""
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 11
 			},
 			{
 				"operation": "insert",
@@ -640,6 +707,33 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			},
 			{
 				"operation": "insert",
+				"name": "AddRentalSetButton",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(AddRentalSetButton_caption)#",
+					"color": "primary",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "only-text",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrAddYachtRentalSetProcess",
+							"processRunType": "ForTheSelectedPage",
+							"saveAtProcessStart": true,
+							"showNotification": true,
+							"recordIdProcessParameterName": "ProcessSchemaParameter1"
+						}
+					},
+					"clickMode": "default"
+				},
+				"parentName": "FlexContainer_w69jikr",
+				"propertyName": "items",
+				"index": 4
+			},
+			{
+				"operation": "insert",
 				"name": "GridContainer_dtx94r9",
 				"values": {
 					"type": "crt.GridContainer",
@@ -852,7 +946,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"MySuperValidator": {
 								"type": "usr.DGValidator",
 								"params": {
-									"minValue": 200,
+									"minValue": 500,
 									"message": "#ResourceString(PriceCannotBeLess)#"
 								}
 							}
@@ -1030,6 +1124,21 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					},
 					"CategoriesMultiSelect_List_Items_Predefined_Filter": {
 						"value": null
+					},
+					"PDS_UsrLength_ich4qz9": {
+						"modelConfig": {
+							"path": "PDS.UsrLength"
+						}
+					},
+					"PDS_UsrCaptain_ctyuu53": {
+						"modelConfig": {
+							"path": "PDS.UsrCaptain"
+						}
+					},
+					"PDS_UsrCrewCount_eenskb9": {
+						"modelConfig": {
+							"path": "PDS.UsrCrewCount"
+						}
 					}
 				}
 			},
@@ -1136,13 +1245,12 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				}				
 			},
 			{
-
 				request: "usr.RunMaxPriceWebServiceRequest",
 				/* Implementation of the custom query handler. */
 				handler: async (request, next) => {
 					console.log("Run web service button works...");
-					/* get id from drive type lookup type object
-					var typeObject = await request.$context.PDS_UsrDriveType_87u9x8r;
+					/* get id from drive type lookup type object */
+					var typeObject = await request.$context.PDS_UsrDriveType_d7z81ph;
 					var selectedDriveTypeId = "";
 					if (typeObject) {
 						selectedDriveTypeId = typeObject.value;
@@ -1157,24 +1265,50 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					const methodName = "GetMaxPriceByDriveTypeId";
 					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
 					
-					//const endpoint = "http://localhost/D1_Studio/0/rest/YachtService/GetMaxPriceByDriveTypeId";
 					// Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically.
 					var params = {
 						driveTypeId: selectedDriveTypeId
 					};
+					console.log(params);
 					const response = await httpClientService.post(endpoint, params);
 					
 					console.log("response max price = " + response.body.GetMaxPriceByDriveTypeIdResult);
 					
 					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			},
+			{
+				request: "usr.RunAvgPriceWebServiceRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Run web service button works...");
+					/* get id from drive type lookup type object */
+					var typeObject = await request.$context.PDS_UsrDriveType_d7z81ph;
+					var selectedDriveTypeId = "";
+					if (typeObject) {
+						selectedDriveTypeId = typeObject.value;
+					}
+
+					// Create an instance of the HTTP client from @creatio-devkit/common. 
 					const httpClientService = new sdk.HttpClientService();
+					// Specify the URL to run web service method.
 					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
 					const transferName = "rest";
 					const serviceName = "YachtService";
-					const methodName = "GetExample";
+					const methodName = "GetAvgPriceByDriveTypeId";
 					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
-					const response = await httpClientService.get(endpoint);
-					console.log(response);
+					
+					// Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically.
+					var params = {
+						driveTypeId: selectedDriveTypeId
+					};
+					console.log(params);
+					const response = await httpClientService.post(endpoint, params);
+					
+					console.log("response average price = " + response.body.GetAvgPriceByDriveTypeIdResult);
+					
+					/* Call the next handler if it exists and return its result. */
 					return next?.handle(request);
 				}
 			}
@@ -1197,6 +1331,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 								}
 							};
 						}
+						return result;
 					};
 				},
 				params: [

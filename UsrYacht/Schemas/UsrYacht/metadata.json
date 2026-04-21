@@ -151,6 +151,30 @@
   "A5": "5e8cc8f7-fb39-4b6e-ba7f-1487c36616fd",
   "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6"
 }
++ MetaData.Schema.D2 {
+  "UId": "bddd234e-13b2-205b-62c2-a7cfc4e3f1a7",
+  "A2": "UsrLength",
+  "A3": "30cf04d8-83fc-4dea-9bdb-97c6f383ef00",
+  "A4": "30cf04d8-83fc-4dea-9bdb-97c6f383ef00",
+  "A5": "5e8cc8f7-fb39-4b6e-ba7f-1487c36616fd",
+  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
+}
++ MetaData.Schema.D2 {
+  "UId": "eb730e0f-68fc-ffcb-8ecb-4d15a03f47b0",
+  "A2": "UsrCrewCount",
+  "A3": "30cf04d8-83fc-4dea-9bdb-97c6f383ef00",
+  "A4": "30cf04d8-83fc-4dea-9bdb-97c6f383ef00",
+  "A5": "5e8cc8f7-fb39-4b6e-ba7f-1487c36616fd",
+  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
+}
++ MetaData.Schema.D2 {
+  "UId": "50e030db-e38e-4025-7cc6-7a5b2aa84625",
+  "A2": "UsrCaptain",
+  "A3": "30cf04d8-83fc-4dea-9bdb-97c6f383ef00",
+  "A4": "30cf04d8-83fc-4dea-9bdb-97c6f383ef00",
+  "A5": "5e8cc8f7-fb39-4b6e-ba7f-1487c36616fd",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+}
 ~ MetaData.Schema.D2 [
   "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
   "e80190a5-03b2-4095-90f7-a193a960adee",
@@ -168,7 +192,10 @@
   "3213b143-fb59-3867-daa5-30378cc4469e",
   "f0d19b60-3590-7c9d-d348-9544e4d8738c",
   "0aeb6fe0-405f-260e-5fd7-4e4642babefa",
-  "37988944-4100-4379-b02b-3a65ab88e256"
+  "37988944-4100-4379-b02b-3a65ab88e256",
+  "bddd234e-13b2-205b-62c2-a7cfc4e3f1a7",
+  "eb730e0f-68fc-ffcb-8ecb-4d15a03f47b0",
+  "50e030db-e38e-4025-7cc6-7a5b2aa84625"
 ]
 = MetaData.Schema.D20.A2 "UsrYachtEvents"
 + MetaData.Schema.D20.FA1 false

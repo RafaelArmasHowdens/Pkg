@@ -31,21 +31,29 @@
                   "BGC2": [
                     {
                       "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleCondition",
-                      "UId": "33a8ead7-feae-089a-377d-c7ff0acd9b41",
+                      "UId": "f4f8569b-98b6-38d1-4cf3-8a2c24eb7b5f",
                       "BCO1": {
                         "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleAttributeExpression",
                         "UId": "3da1ce8c-41de-53d2-ccc4-e6e0d79f9524",
-                        "BRE1": "Lookup",
+                        "BRE1": "Float2",
                         "BRE2": "AttributeValue",
-                        "BRX1": "PDS_UsrDriveType_d7z81ph"
-                      }
+                        "BRX1": "PDS_UsrPrice_z61rry4"
+                      },
+                      "BCO2": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleSysSettingExpression",
+                        "UId": "5be67222-18d8-d5a4-b167-1f2e2284b9d0",
+                        "BRE1": "Float2",
+                        "BRE2": "SysSetting",
+                        "BSS1": "MinPriceToRequireYachtComment"
+                      },
+                      "BCO3": 8
                     }
                   ]
                 },
                 "BRC2": [
                   {
-                    "JI0": "Terrasoft.Core.BusinessRules.Models.Actions.BusinessRuleActionHideElement",
-                    "UId": "15965ccd-07d5-c68b-d84a-c336d6b3e3da",
+                    "JI0": "Terrasoft.Core.BusinessRules.Models.Actions.BusinessRuleActionRequiredElement",
+                    "UId": "b6a16191-6966-2331-538a-09bb884f67cb",
                     "BRA4": "Comment"
                   }
                 ]
@@ -59,8 +67,8 @@
               },
               {
                 "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
-                "UId": "c26a9a21-cb32-d577-53e3-a18f11defa8f",
-                "BRT1": "PDS_UsrDriveType_d7z81ph"
+                "UId": "ba2877b6-2b17-daa0-3acc-b143eed31858",
+                "BRT1": "PDS_UsrPrice_z61rry4"
               }
             ],
             "BR3": "BusinessRule_507ae4d"
